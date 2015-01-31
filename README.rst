@@ -64,7 +64,7 @@ Make sure to follow hardening standards for locations, permissions, etc.**
 
 |
 
-Python script with 300s timeout, active enabled, and directories::
+Python script with 180s timeout, active enabled, and directories::
 
   cd /home/uname/proc_wrapper
   ./proc_wrappper -c '/usr/local/bin/python /home/uname/myproj/script.py' -n
