@@ -20,7 +20,7 @@ Usage
 
 Command::
 
-  proc_wrapper [-c '<string>'] [-n <string>] [-a] [-t <int>] [-ld <dir>]
+  proc_wrapper.sh [-c '<string>'] [-n <string>] [-a] [-t <int>] [-ld <dir>]
     [-td <dir>] [-d] [-v]
 
 Options::
@@ -67,20 +67,20 @@ Make sure to follow hardening standards for locations, permissions, etc.**
 Python script with 180s timeout, active enabled, and directories::
 
   cd /home/uname/proc_wrapper
-  ./proc_wrappper -c '/usr/local/bin/python /home/uname/myproj/script.py' -n
+  ./proc_wrapper.sh -c '/usr/local/bin/python /home/uname/myproj/script.py' -n
     'myproj' -a -t 180 -ld /home/uname/myproj/log -td /home/uname/myproj/tmp
 
 The above in cron, run every minute (**-a is not used here**)::
 
   crontab -e
-  * * * * * /home/uname/proc_wrapper/proc_wrapper -c '/usr/bin/python -u
+  * * * * * /home/uname/proc_wrapper/proc_wrapper.sh -c '/usr/bin/python -u
     /home/uname/myproj/script.py' -t 180 -ld /var/log/myproj -td /tmp/myproj >>
     /var/log/myproj-cron.log 2>&1
 
 Show the proc_wrapper version::
 
   cd /home/uname/proc_wrapper
-  ./proc_wrappper -v
+  ./proc_wrapper.sh -v
 
 Installing
 ==========

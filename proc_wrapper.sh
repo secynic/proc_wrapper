@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
-# Copyright (c) 2015 Philip Hane
+# Copyright (c) 2015, 2016 Philip Hane
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -26,7 +26,7 @@
 
 set -eo pipefail
 
-VERSION='0.1.0'
+VERSION='0.1.1'
 
 # Embedded awk program to convert ps output of etime to seconds.
 PID_ETIME_AWK=$(cat << 'EOF'
@@ -186,6 +186,8 @@ kill_proc() {
       kill ${pid}
       status=$?
       reset_pid
+      log "[${name}] Kill result code: ${status}."
+      sleep 1
     fi
   fi
   return ${status}
